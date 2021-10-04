@@ -2,11 +2,12 @@ import socket
 import select
 import sys
 
+
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('127.0.0.1', 8000))
 
-name = None
 
+name = None
 while True:
     read, write, fail = select.select((s, sys.stdin), (), ())
 
