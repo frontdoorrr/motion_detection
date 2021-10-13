@@ -22,11 +22,12 @@ class Chat(protocol.Protocol):
         users.add(name)
         transports.add(self.transport)
 
-        self.transport.write(f'{color}{name}\033[0m'.encode())
+        self.transport.write(f'name'.encode())
 
     def dataReceived(self, data):
         for t in transports:
             if self.transport is not t:
+                print(t)
                 t.write(data)
 
 class ChatFactory(protocol.Factory):

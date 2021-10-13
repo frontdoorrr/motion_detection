@@ -1,11 +1,31 @@
 import mediapipe as mp
 import cv2
-import csv
-import os
 import numpy as np
 import pandas as pd
 import pickle
+
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression, RidgeClassifier
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+
+import socket
+import select
+import sys
 import modiUI001
+import time
+
+name = input("input your name :")
+room_num = int(input("input your room number :"))
+port_num = 8889
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+if room_num == port_num :
+    s.connect(('13.125.112.203', port_num))
+# 예 외
+else :
+    print("잘못된 접근")
+
 
 mp_drawing = mp.solutions.drawing_utils # Drawing helpers
 mp_holistic = mp.solutions.holistic # Mediapipe Solutions
@@ -13,7 +33,6 @@ mp_holistic = mp.solutions.holistic # Mediapipe Solutions
 
 # pkl File Load
 with open('body_language.pkl', 'rb') as f:
-
     model = pickle.load(f)
 
 cap = cv2.VideoCapture(0)
@@ -53,7 +72,7 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
             body_language_class = model.predict(X)[0]
             body_language_prob = model.predict_proba(X)[0]
 
-            # Print Class name and Probability
+            # Print Class name and Probabilityd
             print(body_language_class, body_language_prob)
 
             # Grab ear coords
@@ -84,6 +103,12 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
                         , (15, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
             cv2.putText(image, str(round(body_language_prob[np.argmax(body_language_prob)], 2))
                         , (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+
+            read, write, fail = select.select((s, sys.stdin), (), ())
+            msg = body_language_class
+
+            time.sleep(2)
+            s.send(f'{name}:{msg}'.encode())
 
         except:
             pass

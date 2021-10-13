@@ -4,6 +4,8 @@ from PyQt5 import uic
 from PyQt5 import QtWidgets
 from PyQt5.QtGui import QPixmap
 
+
+
 #UI파일 연결
 form_class1 = uic.loadUiType("modi001.ui")[0]
 form_class2 = uic.loadUiType("modi002.ui")[0]
@@ -24,10 +26,15 @@ class WindowClass(QMainWindow, form_class1) :
     def makeroomFunction(self):
         roomnumb1 = self.roomnumb.text()
         username = self.nametxt.text()
-        print(roomnumb1,username)
+
+        print(roomnumb1, username)
         widget.setCurrentIndex(widget.currentIndex()+1)
         widget.setFixedHeight(200)
         widget.setFixedWidth(600)
+
+        return roomnumb1, username
+
+
 
     # 방입장하기 버튼이 눌리면 작동할 함수
     def enterroomFunction(self) :

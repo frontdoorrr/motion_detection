@@ -4,7 +4,7 @@ import sys
 
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('127.0.0.1', 8000))
+s.connect(('13.125.112.203', 8889))
 
 
 name = None
@@ -22,4 +22,4 @@ while True:
         else:
             msg = desc.readline()
             msg = msg.replace('\n', '')
-            s.send(f'{name} {msg}'.encode())
+            s.send(f'{name}:{msg}'.encode())
