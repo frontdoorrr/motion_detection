@@ -116,10 +116,10 @@
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item alignment="Qt::AlignLeft">
+     <item>
       <widget class="QLabel" name="hand_up_name">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -133,10 +133,10 @@
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignLeft">
+     <item>
       <widget class="QLabel" name="absent_name">
        <property name="text">
-        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

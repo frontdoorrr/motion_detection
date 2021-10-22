@@ -1,7 +1,6 @@
 from ModiProfessor import *
 from ModiStudent import *
 from ModiDetection import *
-import UserData
 
 form_class_main = loadUiType("modi001.ui")[0]
 
@@ -21,29 +20,29 @@ class WindowClass(QMainWindow, form_class_main):
         # 버튼에 기능을 연결하는 코드
         self.makeroom.clicked.connect(self.make_room_function)
         self.enterroom.clicked.connect(self.enter_room_function)
-        self.enterroom.clicked.connect(SendReceive().send_detection)
+        self.enterroom.clicked.connect(send_detection)
 
     # 방만들기 버튼이 눌리면 작동할 함수
     def make_room_function(self):
-        UserData.room_number = self.get_room_number.text()
-        UserData.username = self.get_username.text()
+        room_number = self.get_room_number.text()
+        username = self.get_username.text()
 
         widget.setCurrentIndex(widget.currentIndex() + 1)
         widget.setFixedHeight(200)
         widget.setFixedWidth(750)
-        self.professor_window.room_number_lbl.setText(UserData.room_number)
-        self.professor_window.username_lbl.setText(UserData.username)
+        self.professor_window.room_number_lbl.setText(room_number)
+        self.professor_window.username_lbl.setText(username)
 
     # 방입장하기 버튼이 눌리면 작동할 함수
     def enter_room_function(self):
-        UserData.room_number = self.get_room_number.text()
-        UserData.username = self.get_username.text()
-
         widget.setCurrentIndex(widget.currentIndex() + 2)
+        room_number = self.get_room_number.text()
+        username = self.get_username.text()
+
         widget.setFixedHeight(200)
         widget.setFixedWidth(400)
-        self.student_window.room_number_lbl.setText(UserData.room_number)
-        self.student_window.username_lbl.setText(UserData.username)
+        self.student_window.room_number_lbl.setText(room_number)
+        self.student_window.username_lbl.setText(username)
 
 
 if __name__ == "__main__":
@@ -53,7 +52,7 @@ if __name__ == "__main__":
     # 화면 전환용 Widget 설정
     widget = QStackedWidget()
 
-    # Window Class의 인스턴스 생성
+    # WindowClass의 인스턴스 생성
     professor_window = ProfessorClass()
     student_window = StudentClass()
     main_window = WindowClass(professor_window, student_window)
