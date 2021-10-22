@@ -20,12 +20,12 @@ while True:
 
             if ':' in d:
                 name, motion = d.split(':')
-                print(motion)
+
                 for i in motion_class:
                     if (motion == i):
                         if (name not in student[motion_class.index(i)]):
                             student[motion_class.index(i)].append(name)
-                            # print(student)
+                            print(name, student)
                         else:
                             pass
             else:
