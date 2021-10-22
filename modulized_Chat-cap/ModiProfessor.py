@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.uic import *
 from PyQt5.QtGui import *
-from UserData import *
+import UserData
 
 form_class_professor = loadUiType("modi002.ui")[0]
 
@@ -20,5 +20,5 @@ class ProfessorClass(QMainWindow, form_class_professor):
         self.O_img.setPixmap(QPixmap("O_img.jpg"))
         self.X_img.setPixmap(QPixmap("X_img.jpg"))
 
-        self.room_number_lbl.setText(room_number)
-        self.username_lbl.setText(username)
+        self.room_number_lbl.setText(UserData.room_number)
+        self.username_lbl.setText(UserData.username)

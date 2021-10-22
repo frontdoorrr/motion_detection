@@ -36,13 +36,13 @@ class WindowClass(QMainWindow, form_class_main):
     # 방입장하기 버튼이 눌리면 작동할 함수
     def enter_room_function(self):
         widget.setCurrentIndex(widget.currentIndex() + 2)
-        room_number = self.get_room_number.text()
-        username = self.get_username.text()
+        UserData.room_number = self.get_room_number.text()
+        UserData.username = self.get_username.text()
 
         widget.setFixedHeight(200)
         widget.setFixedWidth(400)
-        self.student_window.room_number_lbl.setText(room_number)
-        self.student_window.username_lbl.setText(username)
+        self.student_window.room_number_lbl.setText(UserData.room_number)
+        self.student_window.username_lbl.setText(UserData.username)
 
 
 if __name__ == "__main__":
