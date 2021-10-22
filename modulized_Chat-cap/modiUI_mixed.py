@@ -3,7 +3,6 @@ from PyQt5 import uic
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 
-# 디텍팅하는쪽 임포트
 import mediapipe as mp
 import cv2
 
@@ -13,6 +12,7 @@ import pickle
 import socket
 import select
 import sys
+
 
 
 # 유저 데이터
