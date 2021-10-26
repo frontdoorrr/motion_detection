@@ -8,13 +8,9 @@ import socket
 import select
 import UserData
 
-
-
 def send_detection(self):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('15.164.244.179', 8889))
-
-    name = UserData.username
+    s.connect((UserData.ip_address, UserData.port_num))
 
     mp_drawing = mp.solutions.drawing_utils  # Drawing helpers
     mp_holistic = mp.solutions.holistic  # Mediapipe Solutions
@@ -113,12 +109,11 @@ def send_detection(self):
 
 def receive_name():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('15.164.244.179', 8889))
+    s.connect((UserData.ip_address, UserData.port_num))
 
     motion_class = ['basic', 'PoseO', 'PoseX', 'HandR', 'HandL']
-    student = [[], [], [], [], []]
 
-    name = 'HK'
+
     while True:
         read, write, fail = select.select((s, sys.stdin), (), ())
 
@@ -131,6 +126,7 @@ def receive_name():
                 if ':' in d:
                     name, motion = d.split(':')
 
+                    student = [[], [], [], [], []]
                     for i in motion_class:
                         if (motion == i):
                             if (name not in student[motion_class.index(i)]):
