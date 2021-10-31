@@ -12,7 +12,6 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 import socket
 import select
 import sys
-import modiUI001
 import time
 
 name = input("input your name :")
@@ -107,7 +106,7 @@ with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=
             read, write, fail = select.select((s, sys.stdin), (), ())
             msg = body_language_class
 
-            time.sleep(2)
+
             s.send(f'{name}:{msg}'.encode())
 
         except:

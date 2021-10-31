@@ -6,13 +6,14 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect(('127.0.0.1', 8000))
 
 motion_class = ['basic', 'PoseO', 'PoseX', 'HandR', 'HandL']
-student = [[], [], [], [], []]
+
 
 name = 'HK'
 while True:
     read, write, fail = select.select((s, sys.stdin), (), ())
 
     for desc in read:
+        student = [[], [], [], [], []]
         if desc == s:
             data = s.recv(4096)
             # 받아온 문자열을 출력함

@@ -19,7 +19,7 @@ class WindowClass(QMainWindow, form_class_main):
 
         # 버튼에 기능을 연결하는 코드
         self.makeroom.clicked.connect(self.make_room_function)
-        self.makeroom.clicked.connect(receive_list)
+        self.makeroom.clicked.connect(ProfessorClass.receive_list)
         self.enterroom.clicked.connect(self.enter_room_function)
         self.enterroom.clicked.connect(send_detection)
 
