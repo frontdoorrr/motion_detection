@@ -17,7 +17,10 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>modi</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -46,6 +49,12 @@
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="0">
       <widget class="QLabel" name="room_number_lbl">
+       <property name="font">
+        <font>
+         <family>KoPubWorld돋움체 Light</family>
+         <underline>true</underline>
+        </font>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -56,6 +65,12 @@
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="username_lbl">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+         <underline>true</underline>
+        </font>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -64,18 +79,20 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>참여자수</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="1">
       <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;맑은 고딕&quot;;</string>
+       </property>
        <property name="text">
         <string>님의</string>
        </property>
@@ -83,6 +100,18 @@
      </item>
      <item row="1" column="1">
       <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <family>맑은 고딕</family>
+         <pointsize>9</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 9pt &quot;맑은 고딕&quot;;</string>
+       </property>
        <property name="text">
         <string>방</string>
        </property>
@@ -90,6 +119,11 @@
      </item>
      <item row="2" column="1">
       <widget class="QLabel" name="get_count_attendants">
+       <property name="font">
+        <font>
+         <family>KoPubWorld바탕체 Light</family>
+        </font>
+       </property>
        <property name="text">
         <string/>
        </property>
@@ -122,6 +156,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
@@ -131,6 +168,18 @@
       <width>91</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 9pt &quot;맑은 고딕&quot;;</string>
     </property>
     <property name="text">
      <string>당신의 모션</string>

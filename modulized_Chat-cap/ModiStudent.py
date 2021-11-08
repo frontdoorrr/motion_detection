@@ -29,4 +29,4 @@ class StudentClass(QMainWindow, form_class_student):
         elif UserData.motion_msg == 'PoseX':
             self.motion_client.setPixmap(QPixmap("X_img.jpg"))
         else:
-            self.motion_client.setPixmap(QPixmap("absent_img.jpg"))
+            self.motion_client.setPixmap(QPixmap("present.jpg"))

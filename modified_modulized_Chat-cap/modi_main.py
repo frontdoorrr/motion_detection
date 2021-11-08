@@ -19,20 +19,22 @@ class WindowClass(QMainWindow, form_class_main):
 
         # 버튼에 기능을 연결하는 코드
         self.makeroom.clicked.connect(self.make_room_function)
-        self.makeroom.clicked.connect(ProfessorClass.receive_list)
+        self.makeroom.clicked.connect(receive_list)
         self.enterroom.clicked.connect(self.enter_room_function)
         self.enterroom.clicked.connect(send_detection)
 
     # 방만들기 버튼이 눌리면 작동할 함수
     def make_room_function(self):
+        widget.setCurrentIndex(widget.currentIndex() + 1)
         room_number = self.get_room_number.text()
         username = self.get_username.text()
 
-        widget.setCurrentIndex(widget.currentIndex() + 1)
         widget.setFixedHeight(200)
         widget.setFixedWidth(750)
         self.professor_window.room_number_lbl.setText(room_number)
         self.professor_window.username_lbl.setText(username)
+
+
 
 
     # 방입장하기 버튼이 눌리면 작동할 함수
@@ -40,7 +42,6 @@ class WindowClass(QMainWindow, form_class_main):
         widget.setCurrentIndex(widget.currentIndex() + 2)
         room_number = self.get_room_number.text()
         username = self.get_username.text()
-
 
         widget.setFixedHeight(200)
         widget.setFixedWidth(400)

@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>modi</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -27,6 +27,9 @@
      <width>400</width>
      <height>400</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color : rgb(255, 255, 255)</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -45,8 +48,16 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>50</pointsize>
+      <family>KoPubWorld돋움체 Bold</family>
+      <pointsize>20</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;KoPubWorld돋움체 Bold&quot;;
+color: rgb(22, 121, 255)</string>
     </property>
     <property name="text">
      <string>모디</string>
@@ -75,10 +86,38 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QLineEdit" name="get_room_number"/>
+      <widget class="QLineEdit" name="get_room_number">
+       <property name="font">
+        <font>
+         <family>KoPubWorld돋움체 Light</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+border-bottom: 2px solid rgba(46,82,101,200);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>방 번호</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="get_username"/>
+      <widget class="QLineEdit" name="get_username">
+       <property name="font">
+        <font>
+         <family>KoPubWorld돋움체 Light</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: none;
+border-bottom: 2px solid rgba(46,82,101,200);
+padding-bottom: 7px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>이름</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -91,28 +130,7 @@
       <height>61</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="room_number_label">
-       <property name="text">
-        <string>방번호</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="name_label">
-       <property name="text">
-        <string>이름</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_3">
     <property name="geometry">
@@ -126,6 +144,13 @@
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <widget class="QPushButton" name="enterroom">
+       <property name="styleSheet">
+        <string notr="true">background-color : rgb(85, 170, 255);
+font: 57 9pt &quot;KoPubWorld돋움체 Medium&quot;;
+color: rgb(255, 255, 255);
+padding-left: 5px;
+padding-top: 5px;</string>
+       </property>
        <property name="text">
         <string>방 입장</string>
        </property>
@@ -133,6 +158,13 @@
      </item>
      <item>
       <widget class="QPushButton" name="makeroom">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(85, 170, 255);
+font: 57 9pt &quot;KoPubWorld돋움체 Medium&quot;;
+color: rgb(255, 255, 255);
+padding-left: 5px;
+padding-top: 5px;</string>
+       </property>
        <property name="text">
         <string>방 만들기</string>
        </property>

@@ -8,6 +8,7 @@ form_class_student = loadUiType("modi003.ui")[0]
 
 
 class StudentClass(QMainWindow, form_class_student):
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
